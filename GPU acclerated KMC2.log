@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.6)  18 OCT 2017 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.6)  22 OCT 2017 15:43
 entering extended mode
 **"./GPU acclerated KMC2.tex"
 ("GPU acclerated KMC2.tex"
@@ -384,37 +384,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--125
 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 141.
+LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 145.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 141.
+(Font)              size <7> substituted on input line 145.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 141.
+(Font)              size <5> substituted on input line 145.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 141.
+(Font)              size <7> substituted on input line 145.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.75> not available
-(Font)              size <5> substituted on input line 141.
+(Font)              size <5> substituted on input line 145.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 141.
+(Font)              size <7> substituted on input line 145.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 141.
+(Font)              size <5> substituted on input line 145.
 
 
 LaTeX Font Warning: Font shape `LY1/phb/bx/n' undefined
-(Font)              using `LY1/phb/m/n' instead on input line 141.
+(Font)              using `LY1/phb/m/n' instead on input line 145.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `LY1/phv/m/it' in size <8> not available
-(Font)              Font shape `LY1/phv/m/sl' tried instead on input line 149.
+(Font)              Font shape `LY1/phv/m/sl' tried instead on input line 151.
 
 Overfull \hbox (252.0pt too wide) has occurred while \output is active
 [][] 
@@ -422,20 +425,28 @@ Overfull \hbox (252.0pt too wide) has occurred while \output is active
 
 [2 <./kmc2.png>]
 LaTeX Font Info:    Font shape `LY1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `LY1/ptm/b/n' tried instead on input line 158.
+(Font)              Font shape `LY1/ptm/b/n' tried instead on input line 164.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 130.25949pt
+Extra height:10.0pt when 177.75949pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:130.25949pt Right:116.519pt Output:130.25949pt
+Extra height:10.0pt when 178.75949pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 179.75949pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:179.75949pt Right:179.519pt Output:179.75949pt
 - LAST -
 Extra skip:0.0pt
-Left:130.25949pt
-Right:116.519pt
-Output:130.25949pt
+Left:179.75949pt
+Right:179.519pt
+Output:179.75949pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -456,10 +467,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3725 strings out of 493334
- 46088 string characters out of 3136670
- 116094 words of memory out of 3000000
- 7160 multiletter control sequences out of 15000+200000
+ 3726 strings out of 493334
+ 46096 string characters out of 3136670
+ 117127 words of memory out of 3000000
+ 7161 multiletter control sequences out of 15000+200000
  54589 words of font info for 95 fonts, out of 3000000 for 9000
  1145 hyphenation exceptions out of 8191
  40i,11n,28p,396b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -473,7 +484,7 @@ MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files (x86)/MiKTeX
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
 rw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on "GPU acclerated KMC2.pdf" (3 pages, 145345 bytes).
+Output written on "GPU acclerated KMC2.pdf" (3 pages, 144620 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

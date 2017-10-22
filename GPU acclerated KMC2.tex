@@ -36,8 +36,8 @@ The idea behind k-mer counting is very simple. The most naive way is to count k-
 This method could work if we have thousands of genome reads. Only, in real life, we would have millions of genome reads to process. With a naive algorithm, k-mer counting can take a large amount of memory and take a long time to run. 
 
 Different k-mer counting algorithms have been developed.
-KMC2 \citep{Seb14} is a one of the most popular k-mer counting tool. KMC2 is designed to be memory frugal and fast while some other k-mer counting tools would use tens of gigabytes of memory， like Jellyfish \citep{Mar11} and BFCounter \citep{Mel11}. 
-The memory frugalness of KMC2 is the most important reason why we chose to implement this particular algorithm on GPU. 
+KMC2 \citep{Seb14} is a one of the most popular k-mer counting tool. KMC2 is designed to be memory frugal and fast while some other k-mer counting tools would use tens of gigabytes of memory like Jellyfish \citep{Mar11} and BFCounter \citep{Mel11}. 
+The memory frugality of KMC2 is the most important reason why we chose to implement this particular algorithm on GPU. 
 
 Even with tools like KMC2, k-mer counting would still take a substantial amount of time to process. The original KMC2 was implemented purely using CPU. 
 In this work, we would like to exploit the computation power of GPU and further optimize the running time of KMC2. We developed an effective GPU implementation of KMC2 for acceleration because GPU usually does not have a very large memory. 
@@ -134,14 +134,18 @@ All experiments are done using Xeon E5-2603 v2 CPU and GeForce GTX 770.
 \begin{table}[H]
 \processtable{K-mer counting results\label{Tab:01}} {\begin{tabular}{@{}llll@{}}\toprule  &
 first stage(s) & second stage(s) & total running time(s)\\\midrule
-1 thread CPU & 127 & 307 & 435\\
-4 thread CPU & 62 & 85 & 148\\
-GPU with 1 CPU thread & 20 & 97 & 117\\
-GPU with 4 CPU thread & 20 & 60 & 80\\\botrule
+GPU KMC2 (1 thread) & 20 & 97 & 117\\
+GPU KMC2 (4 threads) & 20 & 60 & 80\\\
+KMC2 (1 thread) & 127 & 307 & 435\\\
+KMC2 (4 threads) & 62 & 85 & 148\\\
+DSK (1 thread) & N/A & N/A & 866\\\
+DSK (4 threads) & N/A & N/A & 224\\\
+JellyFish2 (1 thread) & N/A & N/A & 1072\\\
+JellyFish2 (4 threads) & N/A & N/A & 320\\\botrule
 \end{tabular}}{}
 \end{table}
 
-The testing is done using mouse genomes whose read length equals to 100. And we count all k-mers with length 40.
+The testing is done using 35249162 mouse genomes whose read length equals to 100. And we count all k-mers with length 40.
 The results are summarized in Table~\ref{Tab:01}.
 
 Overall, the GPU implementation of KMC2 achieved a 3.7x speedup over single thread CPU version while using one CPU thread and achieved a 5.4x speedup while using four CPU threads.
@@ -150,26 +154,30 @@ Note that we achieved a 6.35x speedup in the first stage disregard the number of
 Moreover, the speedup we got using GPU with 4 CPU threads is not very significant.
 The reason is that the sorting stage is not parallelized by OpenMP. Even multiple CPU threads are running at the time, only one sorter kernel could be launched. 
 There is a large overhead is this process due to the serialized cudaMemcpy's and kernel launched. Therefore, it prevented further performance gain.
- 
+
+We also compared the performance of our implementation against two other popular k-mer counting tools, JellyFish 2 and DSK \citep{Rizk13}. 
+We achieved 7.4x speed up over DSK and 9.2x speed up over JellyFish2 if only one CPU thread is used.
 
 \begin{thebibliography}{}
 
-\bibitem[Heo {\it et~al}., 2016]{Heo16}
-Heo,Y., Ramachandran,A., Hwu,W., Ma,J., Chen,D. (2016) BLESS 2: accurate, memory-efficient and fast error correction method, {\it Bioinformatics}, {\bf 146}.
+\bibitem[Deorowicz {\it et~al}., 2014]{Seb14}
+Deorowicz,S.,Kokot,M.,Grabowski,S.,Debudaj-Grabysz,S. (2014). KMC 2: Fast and resource-frugal k-mer counting, {\it Bioinformatics}, {\bf 00}, 1-21.
 
-\bibitem[Marius {\it et~al}., 2017]{Mar17}
-Marius, E., Steffen, R., Matthias, M. (2017) Gerbil: a fast and memory-efficient k-mer counter with GPU-support, {\it Algorithms for Molecular Biology}.
+\bibitem[Heo {\it et~al}., 2016]{Heo16}
+Heo,Y., Ramachandran,A., Hwu,W., Ma,J., Chen,D. (2016). BLESS 2: accurate, memory-efficient and fast error correction method, {\it Bioinformatics}, {\bf 146}.
 
 \bibitem[Marcais {\it et~al}., 2011]{Mar11}
-Marcais,G., Kingsford,C. (2011)  A fast, lock-free approach for effi-
+Marcais,G., Kingsford,C. (2011).  A fast, lock-free approach for effi-
 cient parallel counting of occurrences of k-mers, {\it Bioinformatics}, {\bf 146}, 764-770.
 
+\bibitem[Marius {\it et~al}., 2017]{Mar17}
+Marius, E., Steffen, R., Matthias, M. (2017). Gerbil: a fast and memory-efficient k-mer counter with GPU-support, {\it Algorithms for Molecular Biology}.
+
 \bibitem[Melsted {\it et~al}., 2011]{Mel11}
-Melsted,P., Pritchard,J.K. (2011) Efficient counting of k-mers in DNA sequences
+Melsted,P., Pritchard,J.K. (2011). Efficient counting of k-mers in DNA sequences
 using a bloom filter. {\it BMC Bioinformatics}, {\bf 12}, 333.
 
-\bibitem[Deorowicz {\it et~al}., 2014]{Seb14}
-Deorowicz,S.,Kokot,M.,Grabowski,S.,Debudaj-Grabysz,S. (2014) KMC 2: Fast and resource-frugal k-mer counting, {\it Bioinformatics}, {\bf 00}, 1-21.
-
+\bibitem[Rizk {\it et~al}., 2013]{Rizk13}
+Rizk, G., Lavenier, D., Chikhi, R. (2013). DSK: k-mer counting with very low memory usage. {\it BMC Bioinformatics}, {\bf 29}, 652-653.
 \end{thebibliography}
 \end{document}
