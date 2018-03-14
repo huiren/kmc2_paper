@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.6)  22 OCT 2017 15:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.6)  28 JAN 2018 23:05
 entering extended mode
 **"./GPU acclerated KMC2.tex"
 ("GPU acclerated KMC2.tex"
@@ -282,7 +282,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for LY1+phv on input line 28.
+LaTeX Font Info:    Try loading font information for LY1+phv on input line 33.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ly1\ly1phv.fd"
 File: ly1phv.fd 2001/02/01 scalable font definitions for LY1/phv using Berry na
@@ -297,7 +297,7 @@ f>
 (epstopdf)                    size: 9259 bytes
 (epstopdf)             Command: <epstopdf --outfile=OUP_First_SBk_Bot_8401-eps-
 converted-to.pdf OUP_First_SBk_Bot_8401.eps>
-(epstopdf)             \includegraphics on input line 28.
+(epstopdf)             \includegraphics on input line 33.
 Package epstopdf Info: Output file is already uptodate.
 
 <OUP_First_SBk_Bot_8401-eps-converted-to.pdf, id=1, 54.2025pt x 54.2025pt>
@@ -305,47 +305,50 @@ File: OUP_First_SBk_Bot_8401-eps-converted-to.pdf Graphic file (type pdf)
 
 <use OUP_First_SBk_Bot_8401-eps-converted-to.pdf>
 Package pdftex.def Info: OUP_First_SBk_Bot_8401-eps-converted-to.pdf used on in
-put line 28.
+put line 33.
 (pdftex.def)             Requested size: 54.20236pt x 54.20236pt.
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <8> not available
-(Font)              Font shape `LY1/phv/b/n' tried instead on input line 28.
+(Font)              Font shape `LY1/phv/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <18> not available
-(Font)              Font shape `LY1/phv/b/n' tried instead on input line 28.
+(Font)              Font shape `LY1/phv/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <12> not available
-(Font)              Font shape `LY1/phv/b/n' tried instead on input line 28.
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+(Font)              Font shape `LY1/phv/b/n' tried instead on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <9> not available
-(Font)              Font shape `LY1/phv/b/n' tried instead on input line 28.
+(Font)              Font shape `LY1/phv/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <7> not available
-(Font)              Font shape `LY1/phv/b/n' tried instead on input line 28.
+(Font)              Font shape `LY1/phv/b/n' tried instead on input line 33.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 28.
+(Font)              size <6> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 28.
+(Font)              size <6> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 28.
+(Font)              size <6> substituted on input line 33.
 
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <10> not available
-(Font)              Font shape `LY1/phv/b/n' tried instead on input line 28.
-LaTeX Font Info:    Font shape `LY1/phv/m/it' in size <9> not available
-(Font)              Font shape `LY1/phv/m/sl' tried instead on input line 28.
+(Font)              Font shape `LY1/phv/b/n' tried instead on input line 33.
 
-Underfull \hbox (badness 10000) detected at line 28
+Underfull \hbox (badness 10000) in paragraph at lines 33--33
+
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 33
 []
  []
 
@@ -353,20 +356,20 @@ Underfull \hbox (badness 10000) detected at line 28
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<kmc2.png, id=2, 911.65594pt x 213.04594pt>
+<kmc2.png, id=2, 809.27344pt x 274.77657pt>
 File: kmc2.png Graphic file (type png)
  <use kmc2.png>
-Package pdftex.def Info: kmc2.png used on input line 66.
-(pdftex.def)             Requested size: 455.82686pt x 106.5227pt.
-LaTeX Font Info:    Try loading font information for LY1+phb on input line 67.
-LaTeX Font Info:    No file LY1phb.fd. on input line 67.
+Package pdftex.def Info: kmc2.png used on input line 92.
+(pdftex.def)             Requested size: 404.63573pt x 137.38794pt.
+LaTeX Font Info:    Try loading font information for LY1+phb on input line 94.
+LaTeX Font Info:    No file LY1phb.fd. on input line 94.
 
 
 LaTeX Font Warning: Font shape `LY1/phb/m/n' undefined
-(Font)              using `LY1/ptm/m/n' instead on input line 67.
+(Font)              using `LY1/ptm/m/n' instead on input line 94.
 
 LaTeX Font Info:    Font shape `LY1/phv/bx/n' in size <6.5> not available
-(Font)              Font shape `LY1/phv/b/n' tried instead on input line 67.
+(Font)              Font shape `LY1/phv/b/n' tried instead on input line 94.
 
 Overfull \hbox (1.12001pt too wide) has occurred while \output is active
  []
@@ -380,44 +383,41 @@ Overfull \hbox (1.12001pt too wide) has occurred while \output is active
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 185--196
 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 145.
+LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 223.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 145.
+(Font)              size <7> substituted on input line 223.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 145.
+(Font)              size <5> substituted on input line 223.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 145.
+(Font)              size <7> substituted on input line 223.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.75> not available
-(Font)              size <5> substituted on input line 145.
+(Font)              size <5> substituted on input line 223.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 145.
+(Font)              size <7> substituted on input line 223.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 145.
+(Font)              size <5> substituted on input line 223.
 
 
 LaTeX Font Warning: Font shape `LY1/phb/bx/n' undefined
-(Font)              using `LY1/phb/m/n' instead on input line 145.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(Font)              using `LY1/phb/m/n' instead on input line 223.
 
 LaTeX Font Info:    Font shape `LY1/phv/m/it' in size <8> not available
-(Font)              Font shape `LY1/phv/m/sl' tried instead on input line 151.
+(Font)              Font shape `LY1/phv/m/sl' tried instead on input line 224.
 
 Overfull \hbox (252.0pt too wide) has occurred while \output is active
 [][] 
@@ -425,31 +425,78 @@ Overfull \hbox (252.0pt too wide) has occurred while \output is active
 
 [2 <./kmc2.png>]
 LaTeX Font Info:    Font shape `LY1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `LY1/ptm/b/n' tried instead on input line 164.
+(Font)              Font shape `LY1/ptm/b/n' tried instead on input line 250.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 177.75949pt
+Extra height:30.519pt when 306.642pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 178.75949pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:0.0pt when 179.75949pt
+Extra height:30.519pt when 307.642pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(2)Left:179.75949pt Right:179.519pt Output:179.75949pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:30.519pt when 308.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:30.519pt when 309.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:30.519pt when 310.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 311.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 312.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 313.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 314.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 315.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 316.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 317.642pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 318.642pt
+Extra height:0.0pt when 319.642pt
+(2)Left:319.642pt Right:289.519pt Output:319.642pt
 - LAST -
 Extra skip:0.0pt
-Left:179.75949pt
-Right:179.519pt
-Output:179.75949pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+Left:319.642pt
+Right:289.519pt
+Output:319.642pt
 
 Overfull \hbox (252.0pt too wide) has occurred while \output is active
 [][] 
@@ -467,13 +514,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3726 strings out of 493334
- 46096 string characters out of 3136670
- 117127 words of memory out of 3000000
- 7161 multiletter control sequences out of 15000+200000
- 54589 words of font info for 95 fonts, out of 3000000 for 9000
+ 3724 strings out of 493334
+ 46068 string characters out of 3136670
+ 124127 words of memory out of 3000000
+ 7159 multiletter control sequences out of 15000+200000
+ 53296 words of font info for 94 fonts, out of 3000000 for 9000
  1145 hyphenation exceptions out of 8191
- 40i,11n,28p,396b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,11n,28p,284b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/texnansi.enc}<C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy9.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Progr
@@ -484,7 +531,7 @@ MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files (x86)/MiKTeX
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
 rw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on "GPU acclerated KMC2.pdf" (3 pages, 144620 bytes).
+Output written on "GPU acclerated KMC2.pdf" (3 pages, 155435 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
