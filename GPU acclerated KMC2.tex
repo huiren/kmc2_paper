@@ -34,7 +34,7 @@ thread and 5.2x speedup using one GPU with four CPU threads over a single thread
 
 \section{Introduction}
 
-K-mer counting refers to counting the frequencies of all  k-long strings in a collection
+K-mer counting refers to counting the frequencies of all k-length strings in a collection
 of sequencing reads.
 K-mer counting is a fundamental step for many bioinformatic algorithms, such as BLESS 2
 \citep{Heo16} and Gerbil \citep{Mar17}.
@@ -63,7 +63,7 @@ small memory footprint.
 
 \section{Approach}
 There are two key concepts behind KMC2: signature and super k-mer.
-A signature is a lexicographically smallest m-mer where m is smaller or equal to k.
+A signature is lexicographically the smallest m-mer where m is smaller or equal to k.
 Another constraint for a signature is that it cannot contain substring sequence AA and it
 does not start with AAA or ACA.
 A super k-mer is formed by consecutive k-mers which share the same signature.
@@ -71,7 +71,7 @@ A super k-mer is formed by consecutive k-mers which share the same signature.
 KMC2 is a disk based k-mer counting algorithm. It includes two major stages, a
 distribution stage and a sorting stage. There is also a pre-processing stage to calculate
 the signature map for distribution of super k-mers. By dividing the super k-mers into
-different bins, KMC2 is capable to maintain a small memory footprint while collecting
+different bins, KMC2 is capable of maintaining a small memory footprint while collecting
 statistics of all the k-mers.
 The idea of signature is introduced to balance the number of super k-mers stored in each
 bin and it is used to extract super k-mers from the sequencing reads and distribute them
@@ -113,14 +113,13 @@ After the result is copied back to the host, it will be dumped into the temporar
 files.
 
 There are two key challenges in exporting KMC2 to GPU.
-The first limitation is that even though KMC2 is a memory frugal algorithm, it still
-requires a considerable amount of memory.
+The first limitation is the limitation of memory on GPU.
 We have to identify the limitations of GPU computation and utilize all the memory we have
 in GPU.
 The second challenge is that reading fastq file is time consuming and it is essential to
 hide the latency of file IO in our implementation.
 
-On the GPU side, we have two options to implement the buffer for the bins. We could
+We have two options to implement the buffer for the bins. We could
 have a global buffer shared by all threads or each thread could have its own buffer.
 Using the global buffer is more memory efficient but it requires a lock for every bin in
 the buffer.
@@ -134,17 +133,18 @@ cudaMemcpy more times which also introduces a larger overhead.
 
 To minimize the running time of the first stage, we maximized the overlap between host and
 device computation.
-The readers are responsible for fetching reads from the fastq file.
-The splitters will process the reads and split the reads into different bins.
-At last, the writers will store the result of splitters onto the disk.
+The readers on the host CPU are responsible for fetching reads from the fastq file.
+The splitters on the GPU device will process the reads and split the reads into different
+ bins.
+At last, the writers on the host CPU will store the result of splitters onto the disk.
 The readers and writers are serial work and cannot be accelerated through GPU.
 Therefore, the readers and writers are implemented on the CPU side and we tried to 
 maximize the overlap between CPU and GPU computation.
 As shown in Figure~1\vphantom{\ref{fig:01}}, when the kernels for splitters are running on
 the device side, the host first writes the result of the previous batch to the disk if
 that batch exits and then prepares the reads for the next batch.
-Therefore, the device will never sit idle to wait for its data except for the first batch
-of work. Figure~1\vphantom{\ref{fig:01}} shows the collaboration between GPU and CPU in
+Therefore, the idle time of the device is minimized.
+Figure~1\vphantom{\ref{fig:01}} shows the collaboration between GPU and CPU in
 the first stage.
 
 The other technique we used is dividing the kernels into streams.
@@ -173,7 +173,7 @@ Therefore, instead of moving the computation to the device side, the expander an
 collector are implemented on the host side.
 The sorter uses radix sort which can be easily parallelized on GPU.
 Therefore, a collaborative processing with both GPU and CPU is more efficient.
-We used radix sort implemented in Thrust to perform the sorting in the sorters on GPU.
+We used radix sort implemented in Thrust \citep{Jared} provided by NVIDIA to perform the sorting in the sorters on GPU.
 
 However, simply using the Thrust to parallelize the sorters didn't give us a satisfactory
 speedup.
@@ -253,6 +253,9 @@ frugal k-mer counting, {\it Bioinformatics}, {\bf 00}, 1-21.
 Heo,Y., Ramachandran,A., Hwu,W., Ma,J., Chen,D. (2016). BLESS 2: accurate, memory-
 efficient and fast error correction method, {\it Bioinformatics}, {\bf 146}.
 
+\bibitem[Jared {\it et~al}., 2015]{Jared}
+Jared H., Nathan B. (2015). Thrust:https://thrust.github.io/
+
 \bibitem[Marcais {\it et~al}., 2011]{Mar11}
 Marcais,G., Kingsford,C. (2011).  A fast, lock-free approach for effi-
 cient parallel counting of occurrences of k-mers, {\it Bioinformatics}, {\bf 146},
@@ -269,5 +272,6 @@ using a bloom filter. {\it BMC Bioinformatics}, {\bf 12}, 333.
 \bibitem[Rizk {\it et~al}., 2013]{Rizk13}
 Rizk, G., Lavenier, D., Chikhi, R. (2013). DSK: k-mer counting with very low memory usage.
 {\it BMC Bioinformatics}, {\bf 29}, 652-653.
+
 \end{thebibliography}
 \end{document}
