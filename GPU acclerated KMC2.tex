@@ -28,6 +28,7 @@ bioinforamtic algorithms. KMC2 is one of the most popular tools for k-mer counti
 this work, we leverage the computation power of the GPU to accelerate KMC2. Our goal is to
 reduce the overall runtime of many genome analysis tasks that use K-mer counting as an
 essential step.\\
+\textbf{Availability:} Source code is freely available at https://github.com/huiren/kmc2.\\
 \textbf{Results:} We achieved 3.8x speedup using one GTX 1080 Ti with one CPU (Xeon
 E5-2603)
 thread and 5.2x speedup using one GPU with four CPU threads over a single CPU thread.\\
@@ -147,20 +148,20 @@ In order to evaluate the performance of the GPU acceleration for KMC2, we tested
 implementation against the original KMC2 \citep{Seb14}.
 
 All experiments are done using Xeon E5-2603 v2 CPU and GeForce GTX 1080 Ti.
-The testing is done using 35249162 mouse reads which read length equals to 100.
+The testing is done using mouse genome with 40x coverage and read length equals to 100.
 The results are summarized in Table~\ref{Tab:01} and Table~\ref{Tab:02}.
 
-Overall, the GPU implementation of KMC2 achieved a 3.8x speedup over single thread CPU
-version while using one CPU thread and achieved a 5.2x speedup while using four CPU
-threads.
+Compared to the original KMC2 implementation \citep{Seb14} running on a single CPU thread, 
+our implementation that uses one GPU achieved an overall speedup of 4.03x when using a single 
+CPU thread and 5.88x when using four CPU threads for k=40. Compared to the original KMC2 
+implementation \citep{Seb14} running on 4 CPU threads, our implementation using a single GPU and 4 
+CPU threads achieves a speedup of 1.37x and 2x in the best case (k=40). These accelerations are, 
+respectively, 3.48x and 4.6x for k = 50.
 
-Note that the speedup in the first stage is the same disregard the number of CPU
-threads we used because we are not using OpenMP in the first stage.
-Moreover, the speedup we got using GPU with 4 CPU threads is not very significant.
-The reason is that the sorters are not parallelized by OpenMP. Even multiple CPU threads
-are running at the time, only one sorter kernel could be launched.
-There is a large overhead in this process due to the serialized cudaMemcpy's and kernel
-launched. Therefore, it prevented further performance gain.
+We also compared our implementation of KMC2 to two other popular k-mer counting tools, JellyFish2 
+and DSK for k=40. When the JellyFish2 and DSK implementations use 1 CPU thread, our implementation 
+using 1 GPU and 1 CPU thread achieves 7.24x improvement over JellyFish2 and 5.85x over DSK. When we 
+use 4 CPU threads, the numbers are, respectively, 4.32x and 3.03x. 
 
 \begin{table}[H]
 \processtable{K-mer counting results, baseline is KMC2 with one thread
@@ -211,10 +212,13 @@ launched. Therefore, it prevented further performance gain.
 \end{tabular}}{}
 \end{table}
 
-We also compared the performance of our implementation against two other popular k-mer
-counting tools, JellyFish 2 and DSK \citep{Rizk13}.
-We achieved 8.02x speed up over DSK and 9.9x speed up over JellyFish2 if only one CPU
-thread is used.
+Note that the speedup in the first stage is the same disregard the number of CPU
+threads we used because we are not using OpenMP in the first stage.
+Moreover, the speedup we got using GPU with 4 CPU threads is not very significant.
+The reason is that the sorters are not parallelized by OpenMP. Even multiple CPU threads
+are running at the time, only one sorter kernel could be launched.
+There is a large overhead in this process due to the serialized cudaMemcpy's and kernel
+launched. Therefore, it prevented further performance gain.
 
 \begin{thebibliography}{}
 
