@@ -28,7 +28,7 @@ bioinforamtic algorithms. KMC2 is one of the most popular tools for k-mer counti
 this work, we leverage the computation power of the GPU to accelerate KMC2. Our goal is to
 reduce the overall runtime of many genome analysis tasks that use K-mer counting as an
 essential step.\\
-\textbf{Availability:} Source code is freely available at https://github.com/huiren/kmc2.\\
+\textbf{Availability:} Source code and data is freely available at https://github.com/huiren/kmc2.\\
 \textbf{Results:} We achieved 3.8x speedup using one GTX 1080 Ti with one CPU (Xeon
 E5-2603)
 thread and 5.2x speedup using one GPU with four CPU threads over a single CPU thread.\\
@@ -148,7 +148,8 @@ In order to evaluate the performance of the GPU acceleration for KMC2, we tested
 implementation against the original KMC2 \citep{Seb14}.
 
 All experiments are done using Xeon E5-2603 v2 CPU and GeForce GTX 1080 Ti.
-The testing is done using mouse genome with 40x coverage and read length equals to 100.
+We simulated 40x coverage reads of length 100 bp using the Mouse Chromosome Y 
+(reference accession number : NC\textunderscore000087.7; reference length = 88.1 Mbp).
 The results are summarized in Table~\ref{Tab:01} and Table~\ref{Tab:02}.
 
 Compared to the original KMC2 implementation \citep{Seb14} running on a single CPU thread, 
